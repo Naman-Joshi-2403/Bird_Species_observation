@@ -1,135 +1,135 @@
 # 🐦 Bird Species Observation Analysis
 
-### Forest & Grassland Ecosystem Study
+## Forest & Grassland Ecosystem Study
 
 ------------------------------------------------------------------------
 
 ## 📌 Project Overview
 
-This project analyzes bird species distribution and diversity across
-**Forest** and **Grassland** ecosystems.\
-The goal is to understand how environmental factors such as temperature,
-humidity, disturbance, and habitat type influence bird populations and
-behavior.
+This project analyzes bird species observations across **Forest** and
+**Grassland** ecosystems to understand:
 
-The project includes:
+-   Species distribution patterns
+-   Habitat preferences
+-   Environmental impact on bird activity
+-   Conservation priority trends
 
--   Data Cleaning & Preprocessing
--   Exploratory Data Analysis (EDA)
--   Species & Environmental Analysis
--   Interactive Dashboard using Streamlit & Plotly
--   SQL-based structured storage (optional)
--   Conservation-focused insights
+The project follows a structured workflow:
+
+Data Cleaning → EDA → Visualization → Insights
 
 ------------------------------------------------------------------------
 
-## 🎯 Business Use Cases
+# 🗂️ Actual Project Structure
 
--   Wildlife Conservation Planning
--   Biodiversity Monitoring
--   Land Management Optimization
--   Eco‑Tourism Insights
--   Sustainable Agriculture Support
--   Policy & Decision Support
-
-------------------------------------------------------------------------
-
-## 🗂️ Project Structure
-
-    Bird-Species-Observation/
+    BIRD_SPECIES_OBSERVATION/
     │
-    ├── data/
-    │   ├── Bird_Monitoring_Data_FOREST.xlsx
-    │   └── Bird_Monitoring_Data_GRASSLAND.xlsx
+    ├── Code/
+    │   ├── dashboard.py          # Streamlit dashboard application
+    │   └── data_cleaning.py      # Data preprocessing & cleaning script
     │
-    ├── notebooks/
-    │   └── EDA.ipynb
+    ├── Input/
+    │   ├── Bird_Monitoring_Data_FOREST.XLSX
+    │   └── Bird_Monitoring_Data_GRASSLAND.XLSX
     │
-    ├── app/
-    │   └── streamlit_app.py
+    ├── Output/
+    │   └── cleaned_bird_data.csv
     │
-    ├── requirements.txt
+    ├── Models/                   # (Reserved for future ML models if needed)
+    ├── Doc/                      # Project documentation files
+    ├── env/                      # Virtual environment (not pushed to GitHub)
+    │
+    ├── dev.env                   # Environment variable configuration
+    ├── requirement.txt           # Python dependencies
     └── README.md
 
 ------------------------------------------------------------------------
 
-## ⚙️ Tech Stack
+# ⚙️ Tech Stack
 
 -   Python
 -   Pandas
 -   NumPy
--   SQL (SQLite / MySQL optional)
 -   Plotly
 -   Streamlit
--   Power BI (Optional)
+-   SQL (Optional for storage)
 
 ------------------------------------------------------------------------
 
 # 🚀 Setup Instructions
 
-Follow the steps below to run the project locally.
+Follow these steps to run the project locally.
 
 ------------------------------------------------------------------------
 
 ## 1️⃣ Clone the Repository
 
 ``` bash
-git clone https://github.com/your-username/your-repo-name.git
-cd your-repo-name
+git clone https://github.com/your-username/your-repository-name.git
+cd your-repository-name
 ```
 
 ------------------------------------------------------------------------
 
-## 2️⃣ Create Virtual Environment (Recommended)
+## 2️⃣ Create Virtual Environment
 
 ### Windows
 
 ``` bash
-python -m venv venv
-venv\Scripts\activate
+python -m venv env
+env\Scripts\activate
 ```
 
 ### Mac / Linux
 
 ``` bash
-python3 -m venv venv
-source venv/bin/activate
+python3 -m venv env
+source env/bin/activate
 ```
 
 ------------------------------------------------------------------------
 
 ## 3️⃣ Install Dependencies
 
-Make sure you have updated `requirements.txt` in your GitHub repo.
+Since you have already updated `requirement.txt`, run:
 
 ``` bash
-pip install -r requirements.txt
+pip install -r requirement.txt
 ```
 
 ------------------------------------------------------------------------
 
-## 4️⃣ Configure Environment Variables (If Used)
+## 4️⃣ Configure Environment Variables
 
-If your project uses `.env` file:
+Make sure your `dev.env` file contains the correct paths:
 
-Create a file named:
-
-    dev.env
-
-Add paths like:
-
-    FOREST_DATA_PATH=data/Bird_Monitoring_Data_FOREST.xlsx
-    GRASSLAND_DATA_PATH=data/Bird_Monitoring_Data_GRASSLAND.xlsx
+    FOREST_DATA_PATH=Input/Bird_Monitoring_Data_FOREST.XLSX
+    GRASSLAND_DATA_PATH=Input/Bird_Monitoring_Data_GRASSLAND.XLSX
+    OUTPUT_PATH=Output/cleaned_bird_data.csv
 
 ------------------------------------------------------------------------
 
-## 5️⃣ Run the Streamlit App
+## 5️⃣ Run Data Cleaning Script
+
+This step consolidates and cleans the multi-sheet Excel data.
 
 ``` bash
-streamlit run app/streamlit_app.py
+python Code/data_cleaning.py
 ```
 
-App will run at:
+This will generate:
+
+    Output/cleaned_bird_data.csv
+
+------------------------------------------------------------------------
+
+## 6️⃣ Run Streamlit Dashboard
+
+``` bash
+streamlit run Code/dashboard.py
+```
+
+The app will open in your browser at:
 
     http://localhost:8501
 
@@ -137,65 +137,58 @@ App will run at:
 
 # 📊 Analysis Performed
 
-### 🔎 Data Cleaning
+## 🔹 Data Cleaning
 
--   Missing value handling
--   Column standardization
--   Multi-sheet Excel consolidation
--   Date & time formatting
+-   Multi-sheet Excel handling
+-   Missing value treatment
+-   Column formatting & standardization
+-   Date-time transformation
+-   Habitat consolidation (Forest vs Grassland)
 
-### 📈 Exploratory Data Analysis
+## 🔹 Exploratory Data Analysis
 
--   Temporal Analysis (Year, Month, Season)
--   Spatial Analysis (Location Type, Plot)
--   Species Diversity Metrics
--   Environmental Correlation Analysis
--   Observer Bias Detection
--   Conservation Watchlist Trends
+-   Temporal trends (Year / Month)
+-   Spatial distribution (Plot / Location Type)
+-   Species diversity metrics
+-   Environmental correlation (Temperature, Humidity, Wind)
+-   Observer trend analysis
+-   Conservation watchlist insights
 
-### 🌍 Visualizations
+## 🔹 Dashboard Features
 
--   Species Distribution Bar Charts
--   Temporal Heatmaps
--   Environmental Scatter Plots
--   Interactive Filters (Habitat, Species, Year)
--   Geographic Insights (if coordinates available)
-
-------------------------------------------------------------------------
-
-# 📌 Key Insights Delivered
-
--   Habitat preference patterns of bird species
--   Seasonal activity trends
--   Impact of temperature & disturbance
--   Identification of high biodiversity hotspots
--   Conservation-priority species tracking
+-   Habitat filter (Forest / Grassland)
+-   Species-level analysis
+-   Year-wise trends
+-   Environmental impact visualization
+-   Interactive Plotly charts
 
 ------------------------------------------------------------------------
 
-# 🧪 Evaluation Metrics
+# 📌 Key Insights Generated
 
--   Data Preparation Quality
--   Depth of EDA
--   Visualization Effectiveness
--   Business Insight Relevance
--   Code Quality & Documentation
+-   Habitat-specific species richness
+-   Seasonal bird activity peaks
+-   High biodiversity plots
+-   Environmental factor influence on bird sightings
+-   At-risk species identification
 
 ------------------------------------------------------------------------
 
 # 📦 Deliverables
 
--   Cleaned Dataset
--   Source Code (Well Commented)
--   Interactive Streamlit Dashboard
--   Final Insight Report
--   GitHub Repository with Documentation
+✔ Cleaned Dataset (`cleaned_bird_data.csv`)\
+✔ Python Source Code\
+✔ Interactive Streamlit Dashboard\
+✔ Structured Project Documentation
 
 ------------------------------------------------------------------------
 
-# ⏳ Timeline
+# 🧠 Future Enhancements
 
-Project completion expected within **7 days** from assignment.
+-   Add machine learning model for species prediction
+-   Deploy Streamlit app to cloud (Render / AWS / Streamlit Cloud)
+-   Add geographic mapping with coordinates
+-   SQL database integration for large-scale storage
 
 ------------------------------------------------------------------------
 
@@ -205,10 +198,5 @@ Naman Joshi
 
 ------------------------------------------------------------------------
 
-# 📬 Contact
-
-For project queries, feel free to connect via GitHub or LinkedIn.
-
-------------------------------------------------------------------------
-
-⭐ If you found this project useful, consider giving it a star!
+⭐ If you found this project helpful, consider giving the repository a
+star!
