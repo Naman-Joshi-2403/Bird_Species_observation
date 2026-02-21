@@ -25,8 +25,8 @@ Data Cleaning → EDA → Visualization → Insights
     BIRD_SPECIES_OBSERVATION/
     │
     ├── Code/
-    │   ├── dashboard.py          # Streamlit dashboard application
-    │   └── data_cleaning.py      # Data preprocessing & cleaning script
+    │   ├── dashboard.py 
+    │   └── data_cleaning.py 
     │
     ├── Input/
     │   ├── Bird_Monitoring_Data_FOREST.XLSX
@@ -34,13 +34,10 @@ Data Cleaning → EDA → Visualization → Insights
     │
     ├── Output/
     │   └── cleaned_bird_data.csv
+    ├── env/                     
     │
-    ├── Models/                   # (Reserved for future ML models if needed)
-    ├── Doc/                      # Project documentation files
-    ├── env/                      # Virtual environment (not pushed to GitHub)
-    │
-    ├── dev.env                   # Environment variable configuration
-    ├── requirement.txt           # Python dependencies
+    ├── dev.env                  
+    ├── requirement.txt          
     └── README.md
 
 ------------------------------------------------------------------------
@@ -52,7 +49,6 @@ Data Cleaning → EDA → Visualization → Insights
 -   NumPy
 -   Plotly
 -   Streamlit
--   SQL (Optional for storage)
 
 ------------------------------------------------------------------------
 
@@ -65,7 +61,7 @@ Follow these steps to run the project locally.
 ## 1️⃣ Clone the Repository
 
 ``` bash
-git clone https://github.com/your-username/your-repository-name.git
+git clone https://github.com/Naman-Joshi-2403/Bird_Species_observation.git
 cd your-repository-name
 ```
 
