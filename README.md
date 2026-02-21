@@ -62,7 +62,7 @@ Follow these steps to run the project locally.
 
 ``` bash
 git clone https://github.com/Naman-Joshi-2403/Bird_Species_observation.git
-cd your-repository-name
+cd Bird_Species_observation
 ```
 
 ------------------------------------------------------------------------
@@ -76,18 +76,9 @@ python -m venv env
 env\Scripts\activate
 ```
 
-### Mac / Linux
-
-``` bash
-python3 -m venv env
-source env/bin/activate
-```
-
 ------------------------------------------------------------------------
 
 ## 3️⃣ Install Dependencies
-
-Since you have already updated `requirement.txt`, run:
 
 ``` bash
 pip install -r requirement.txt
