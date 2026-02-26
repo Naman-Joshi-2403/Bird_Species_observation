@@ -28,15 +28,13 @@ with st.sidebar:
         menu_title="Bird Dashboard",
         options=[
             "Executive Overview",
-            "Temporal Analysis",
             "Spatial Analysis",
             "Species Diversity",
             "Species Behavior",
             "Environmental Impact",
             "Distance Analysis",
             "Conservation Insights",
-            "Observer Trends",
-            "Advanced Analytics"
+            "Observer Trends"
         ],
         menu_icon="globe",
         default_index=0,
@@ -79,27 +77,6 @@ if selected == "Executive Overview":
     st.plotly_chart(fig, use_container_width=True)
     st.subheader("Supporting Dataset")
     st.dataframe(habitat_df, hide_index=True)
-
-elif selected == "Temporal Analysis":
-
-    st.title("📅 Temporal Analysis")
-
-    location = st.selectbox("Location Type",
-                            df["Location_Type"].unique())
-
-    filtered_df = df[df["Location_Type"] == location]
-
-    yearly = filtered_df.groupby("Year").size().reset_index(name="Count")
-
-    fig = px.line(yearly,
-                  x="Year",
-                  y="Count",
-                  markers=True,
-                  title="Year-wise Observation Trend")
-
-    st.plotly_chart(fig, use_container_width=True)
-    st.subheader("Supporting Dataset")
-    st.dataframe(yearly, hide_index=True)
 
 elif selected == "Spatial Analysis":
 
@@ -253,7 +230,6 @@ elif selected == "Conservation Insights":
     st.subheader("Supporting Dataset")
     st.dataframe(watchlist_df, hide_index=True)
 
-
 elif selected == "Observer Trends":
 
     st.title("👤 Observer Trends")
@@ -274,22 +250,3 @@ elif selected == "Observer Trends":
     st.plotly_chart(fig, use_container_width=True)
     st.subheader("Supporting Dataset")
     st.dataframe(observer_df, hide_index=True)
-
-elif selected == "Advanced Analytics":
-
-    st.title("📈 Advanced Analytics")
-
-    pivot = df.pivot_table(
-        values="Initial_Three_Min_Cnt",
-        index="Location_Type",
-        columns="Year",
-        aggfunc="mean"
-    )
-
-    fig = px.imshow(pivot,
-                    text_auto=True,
-                    title="Avg Initial 3-Min Count Heatmap")
-
-    st.plotly_chart(fig, use_container_width=True)
-    st.subheader("Supporting Dataset")
-    st.dataframe(pivot, hide_index=True)
